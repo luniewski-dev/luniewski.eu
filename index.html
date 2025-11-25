@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luniewski.eu — Strona oficjalna</title>
+  <meta name="description" content="Oficjalna strona Luniewski.eu. Krótka wizytówka, kontakt i linki społecznościowe.">
+  <meta name="color-scheme" content="light dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a; --fg: #e2e8f0; --muted: #94a3b8;
+      --accent: #38bdf8; --card: #111827; --border: #1f2937;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#ffffff; --fg:#0f172a; --muted:#475569; --accent:#0ea5e9; --card:#f8fafc; --border:#e2e8f0; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: Inter, system-ui, sans-serif;
+      background: radial-gradient(1200px 800px at 20% 10%, rgba(56,189,248,.15), transparent 60%), var(--bg);
+      color: var(--fg); line-height: 1.6;
+    }
+    .container { max-width: 900px; margin: 0 auto; padding: 32px 20px 64px; }
+    header {
+      display: grid; grid-template-columns: 120px 1fr; gap: 24px; align-items: center;
+      margin-top: 40px; margin-bottom: 24px;
+    }
+    .avatar {
+      width: 120px; height: 120px; border-radius: 24px;
+      background: var(--accent); color: var(--bg);
+      border: 2px solid var(--border);
+      display: grid; place-items: center; font-size: 56px; font-weight: 700;
+      box-shadow: 0 8px 28px rgba(0,0,0,.3);
+    }
+    h1 { margin: 0; font-size: clamp(32px, 4vw, 44px); line-height: 1.2; }
+    .subtitle { color: var(--muted); margin-top: 8px; font-size: 1.1em; }
+    .card {
+      margin-top: 20px; padding: 20px; border: 1px solid var(--border);
+      background: var(--card); border-radius: 16px;
+    }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    @media (min-width: 720px) { .grid { grid-template-columns: 1.2fr .8fr; } }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer {
+      margin-top: 40px; color: var(--muted); font-size: 14px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    }
+    .list { margin:0; padding-left:18px; }
+    .list li { margin-bottom:6px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar" aria-label="Logo">Ł</div>
+      <div>
+        <h1>Luniewski.eu</h1>
+        <div class="subtitle">Minimalistyczna wizytówka — kontakt, linki, krótka nota.</div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card" id="o-mnie">
+        <h2>O mnie</h2>
+        <p>Witaj na mojej stronie domowej. To prosta wizytówka, która ma przede wszystkim przedstawić mnie w kilku zdaniach.</p>
+        <p>Przez lata byłem aktywny w sieci i brałem udział w różnych projektach internetowych. Możliwe, że trafiłeś tutaj przez jakiś dawny link, który dziś nie jest już aktywny.</p>
+        <p>Ta strona ma charakter podstawowy, ale traktuję ją jako punkt wyjścia do dalszych działań i miejsce, w którym możesz mnie znaleźć.</p>
+      </section>
+
+      <aside class="card" id="szybkie-linki">
+        <h2>Szybkie linki</h2>
+        <p>Najważniejsze miejsce w sieci:</p>
+        <ul class="list">
+          <li><a href="https://www.linkedin.com/in/mluniewski/" target="_blank" rel="me">LinkedIn</a></li>
+        </ul>
+      </aside>
+    </main>
+
+    <section class="card" id="hobby">
+      <h2>Hobby i zainteresowania</h2>
+      <p>Od lat uwielbiam gry komputerowe – towarzyszą mi od młodości i wciąż sprawiają ogromną frajdę.</p>
+      <p>Drugą pasją jest Postcrossing – wymiana pocztówek z ludźmi z całego świata. To prosta, ale niezwykle ciekawa forma poznawania kultur i nawiązywania kontaktów.</p>
+      <p>Interesuję się również technologią. Śledzę jej rozwój od lat, równolegle z ewolucją internetu, obserwując jak zmienia nasze życie i otwiera nowe możliwości.</p>
+    </section>
+
+    <section class="card" id="kontakt">
+      <h2>Kontakt</h2>
+      <p>Masz pytania lub chcesz współpracować? Napisz:</p>
+      <p><strong>E-mail:</strong> <a href="mailto:kontakt@luniewski.eu">kontakt@luniewski.eu</a></p>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> luniewski.eu — Wszystkie prawa zastrzeżone.</div>
+      <div>Made with <span aria-hidden="true">♥</span> i zdrowym rozsądkiem.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
